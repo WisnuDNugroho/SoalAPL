@@ -12,7 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -32,7 +32,7 @@ class SquareControllerTest {
         request.setNumber(5);
 
         mockMvc.perform(
-                post("/api/square")
+                get("/api/square")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request))
@@ -53,7 +53,7 @@ class SquareControllerTest {
         request.setNumber(2);
 
         mockMvc.perform(
-                post("/api/square")
+                get("/api/square")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request))
@@ -74,7 +74,7 @@ class SquareControllerTest {
         request.setNumber(10);
 
         mockMvc.perform(
-                post("/api/square")
+                get("/api/square")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request))
