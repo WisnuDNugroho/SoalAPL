@@ -1,0 +1,32 @@
+Function square(n: Integer) -> String
+    result <- StringBuilder()
+
+    if n < 3 then
+        result <- "Nilai terlalu kecil"
+    else if n > 9 then
+        result <- "Nilai terlalu besar"
+    else
+        for i <- 0 to n-2 do
+            if i = 0 then
+                for j <- 0 to n-1 do
+                    result.append("=")
+                end for
+            else
+                for j <- 0 to n-1 do
+                    if j = 0 OR j = n-1 then
+                        result.append("|")
+                    else
+                        result.append(" ")
+                    end if
+                end for
+            end if
+        end for
+
+        for j <- 0 to n-1 do
+            result.append("=")
+        end for
+
+    end if
+
+    return result.toString()
+End Function
